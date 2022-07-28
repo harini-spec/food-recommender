@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd 
 import numpy as np
 
-st.title("TactDine")
+st.title("Food Recommender")
 
 df1=pd.read_csv('food.csv')
 df1.columns = ['food_id','title','price', 'num_orders', 'category', 'avg_rating', 'num_rating', 'tags']
