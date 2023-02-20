@@ -24,7 +24,7 @@ def main(title):
     cosine_sim = cosine_similarity(count_matrix, count_matrix)
 
     indices_from_title = pd.Series(df.index, index=df['track_name'])
-    indices_from_food_id = pd.Series(df.index, index=df['song_id'])
+    indices_from_song_id = pd.Series(df.index, index=df['song_id'])
 
     idx=-1
 

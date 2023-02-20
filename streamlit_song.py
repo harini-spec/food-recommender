@@ -16,7 +16,7 @@ df.insert(0, 'song_id', range(1, size))
 df = df[['song_id','artist_name','release_date','genre', 'topic', 'age', 'track_name']]
 
 df['release_date'] = df['release_date'].astype("str")
-df["soup"] = df["topic"] +","+ df["genre"] +","+ df["release_date"]
+df["tags"] = df["topic"] +","+ df["genre"] +","+ df["release_date"]
 
 # df = df.iloc[-500:]
 
@@ -24,7 +24,7 @@ df = df.head(1000)
 
 count = CountVectorizer(stop_words='english')
 
-count_matrix = count.fit_transform(df['soup'])
+count_matrix = count.fit_transform(df['tags'])
 
 cosine_sim = cosine_similarity(count_matrix, count_matrix)
 
