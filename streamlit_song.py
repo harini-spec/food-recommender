@@ -18,7 +18,9 @@ df = df[['song_id','artist_name','release_date','genre', 'topic', 'age', 'track_
 df['release_date'] = df['release_date'].astype("str")
 df["soup"] = df["topic"] +","+ df["genre"] +","+ df["release_date"]
 
-df = df.iloc[500:]
+# df = df.iloc[-500:]
+
+df = df.head(1000)
 
 count = CountVectorizer(stop_words='english')
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/styles.css">
+    <title>Song Recommender</title>
+</head>
+<body>
+        
+    <div class="upper-div">
+
+        <form action="/submit" method="POST">
+            <center>
+            <h1 style="font-size: 2.5vw; margin: 0px;">SONG RECOMMENDER</h1>
+            <br><br>
+            </center>
+
+          <input type="text" id="song" name="song" placeholder="Enter a Song">
+
+          <br><br>
+        
+          <input type="submit" value="Predict">
+
+          <div class="answer">
+            <p>Your Song Suggestions:</p>
+            {% for song in songs %}
+            <div class="inner">
+              <p> <li>{{song.capitalize()}}</li></p>
+            </div>
+            {% endfor %}
+          </div>
+
+        </form>
+      </div>
+
+  </center>
+
+</body>
+</html>
